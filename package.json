@@ -1,0 +1,24 @@
+{
+  "name": "react",
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "@vechain.energy/dapp-kit-hooks": "^1.2.1",
+    "@vechain/dapp-kit": "^1.0.7",
+    "@vechain/dapp-kit-react": "^1.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.1.0",
+    "url": "^0.11.0"
+  },
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  }
+}
