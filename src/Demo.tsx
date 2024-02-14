@@ -22,22 +22,24 @@ export default function Demo() {
     return (
         <div className="max-w-lg m-auto space-y-12 text-center">
             <div className="space-x-2">
-                <div className="flex flex-col space-y-2">
-                    <span className="text-xs">Your are connected as:</span>
-                    <span className="font-mono">{account ?? 'not connected'}</span>
-                </div>
+                {Boolean(account) && (
+                    <div className="flex flex-col space-y-2">
+                        <span className="text-xs">Your are connected as:</span>
+                        <span className="font-mono">{account}</span>
+                    </div>
+                )}
 
                 {!account
                     ? <button
                         onClick={walletModal.open}
-                        className="text-xs rounded bg-orange-500 text-white p-1 px-2"
+                        className="rounded bg-orange-500 text-white p-1 px-2"
                     >
                         connect wallet
                     </button>
                     : <>
                         <button
                             onClick={disconnect}
-                            className="text-xs rounded bg-red-500 text-white p-1 px-2"
+                            className="rounded bg-red-500 text-white p-1 px-2"
                         >
                             disconnect wallet
                         </button>
@@ -50,19 +52,19 @@ export default function Demo() {
             <div className="flex flex-col space-y-6">
                 <div className="flex flex-col space-y-2">
                     <span className="text-xs">Your address resolves to:</span>
-                    <span className="font-mono">{name}</span>
+                    <span className="font-mono">{name || 'no name'}</span>
                 </div>
 
                 <div className="flex flex-col space-y-2">
                     <span className="text-xs">Your name resolves to:</span>
-                    <span className="font-mono">{nameForAddress}</span>
+                    <span className="font-mono">{nameForAddress || 'no address'}</span>
                 </div>
             </div>
 
 
             <div className="flex flex-col space-y-6">
                 <div className="flex flex-col space-y-2">
-                    <span className='text-xs'>Check NameInput.tsx on how the input is enhanced with a name lookup:</span>
+                    <span className='text-xs'>Check NameInput.tsx on how this input is enhanced with a name lookup:</span>
                     <NameInput
                         onChange={(e) => setInputValue(e.target.value)}
                         placeholder="0x.. or .vet address"
