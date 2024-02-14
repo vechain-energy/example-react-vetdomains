@@ -19,6 +19,7 @@
     "url": "^0.11.0"
   },
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html"
   }
 }
