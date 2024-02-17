@@ -2,6 +2,7 @@ import React from 'react'
 import { useWalletModal, useWallet, useConnex } from '@vechain/dapp-kit-react';
 import { useWalletName, getAddress } from '@vechain.energy/dapp-kit-hooks';
 import NameInput from './NameInput';
+import NameDisplay from './NameDisplay';
 
 export default function Demo() {
     const { account, disconnect } = useWallet()
@@ -25,7 +26,7 @@ export default function Demo() {
                 {Boolean(account) && (
                     <div className="flex flex-col space-y-2">
                         <span className="text-xs">Your are connected as:</span>
-                        <span className="font-mono">{account}</span>
+                        <span className="font-mono"><NameDisplay value={account} /></span>
                     </div>
                 )}
 
