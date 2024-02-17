@@ -26,6 +26,7 @@ export default function NameDisplay({ value }: { value?: string | null }): strin
         else {
             getName(strValue, connex)
                 .then((name) => {
+                    // name is an empty string, if there is no primary name set
                     CACHE[strValue] = name || strValue
                     if (cancelled) return
                     setNameOrAddress(CACHE[strValue])
